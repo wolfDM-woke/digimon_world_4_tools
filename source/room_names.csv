@@ -1,0 +1,90 @@
+room,area,place,confidence,evidence,previous_guess
+stag0101,Death Valley,Goblin Pass,VERIFIED,in-game check 2026-10-18; savestate spawns at level end by a locked door,
+stag0102,Death Valley,Abyss of Grief,VERIFIED,in-game check 2026-10-18; spawn reached from Goblin Pass,
+stag0103,Death Valley,Numenume River,VERIFIED,"in-game check 2026-10-18; spawn is on the rails segment, no way back",
+stag0104,Death Valley,Doom Dome,VERIFIED,in-game check 2026-10-18; spawn at level end by the locked door to Doom Base,
+dng101b1,Death Valley,Humid Cave floor 1,VERIFIED,in-game check 2026-10-18; entrance from Goblin Pass,
+dng101b2,Death Valley,Humid Cave floor 2,VERIFIED,in-game check 2026-10-18,
+dng102b1,Death Valley,Cliff Dungeon floor 1,VERIFIED,in-game check 2026-10-18; entrance from Abyss of Grief,
+dng102b2,Death Valley,Cliff Dungeon floor 2,VERIFIED,in-game check 2026-10-18,
+dng102b3,Death Valley,Cliff Dungeon floor 3 (Mammothmon),VERIFIED,in-game check 2026-10-18,
+dng103f1,Death Valley,Doom Base floor 1,VERIFIED,in-game check 2026-10-18; entrance from the Doom Dome locked door,
+dng103f2,Death Valley,Doom Base floor 2,VERIFIED,in-game check 2026-10-18,
+stagGF01,Death Valley,Goburimon Fortress - Guard Room,VERIFIED,in-game check 2026-10-18; entrance from the Goblin Pass locked door,
+stagGF02,Death Valley,Goburimon Fortress - Rotating Hall,VERIFIED,in-game check 2026-10-18,
+stagGF03,Death Valley,X Digimon Lab,VERIFIED,in-game check 2026-10-18; title card: X Digimon Lab,Goburimon Fortress - cliff / X Digimon Lab
+stagGF04,Death Valley,GobGob Room,VERIFIED,in-game check 2026-10-18; title card: GobGob Room; links to Power Plant (Dry Land),Goburimon Fortress - side room
+stagBS01,Bosses,Apokarimon Space,VERIFIED,in-game check 2026-10-18; boss room at the end of Doom Base,Boss stage 1 (end of Doom Base)
+stag0201,Dry Land,Mummy Desert,VERIFIED,in-game check 2026-10-18; spawn at level start,
+stag0202,Dry Land,Grief Wasteland,VERIFIED,in-game check 2026-10-18; entrance from Mummy Desert,
+stag0204,Dry Land,Station X,VERIFIED,in-game check 2026-10-18; entrance from Grief Wasteland,
+stag0205,Dry Land,Power Plant,VERIFIED,"in-game check 2026-10-18; spawn on a cliff, reached from the GobGob Room",
+dng204b1,Dry Land,Sand Labyrinth floor 1,VERIFIED,in-game check 2026-10-18; entrance from Mummy Desert,
+dng204b2,Dry Land,Sand Labyrinth floor 2,VERIFIED,in-game check 2026-10-18,
+dng205b1,Dry Land,Ancient Ruins floor 1,VERIFIED,in-game check 2026-10-18; entrance from Grief Wasteland,
+dng205b2,Dry Land,Ancient Ruins floor 2,VERIFIED,in-game check 2026-10-18,
+dng205b3,Dry Land,Ancient Ruins floor 3,VERIFIED,in-game check 2026-10-18,
+dng206f1,Dry Land,Virus Lab floor 1,VERIFIED,in-game check 2026-10-18; entrance from the Station X locked door,
+dng206f2,Dry Land,Virus Lab floor 2,VERIFIED,in-game check 2026-10-18,
+stagBS02,Bosses,Demon Shift,VERIFIED,in-game check 2026-10-18; boss room at the end of Virus Lab,Boss stage 2 (end of Virus Lab)
+stag0301,Venom Jungle,Gekogeko Land,VERIFIED,in-game check 2026-10-18; entrance from Mangrove Forest,Venom Jungle
+stag0302,Venom Jungle,Mangrove Forest,VERIFIED,in-game check 2026-10-18; reached from Gekogeko Land,
+stag0303,Venom Jungle,Venom Swamp,VERIFIED,in-game check 2026-10-18; reached from Mangrove Forest,Dread Bridge
+stag0304,Venom Jungle,Dread Note,VERIFIED,in-game check 2026-10-18; field; reached from Venom Swamp,field before Dread Note
+dng307b1,Venom Jungle,Geko Path floor 1,VERIFIED,in-game check 2026-10-18; entrance from Gekogeko Land,
+dng307b2,Venom Jungle,Geko Path floor 2,VERIFIED,in-game check 2026-10-18,
+dng308b1,Venom Jungle,Vine Tunnel floor 1,VERIFIED,in-game check 2026-10-18; entrance from Mangrove Forest,
+dng308b2,Venom Jungle,Vine Tunnel floor 2,VERIFIED,in-game check 2026-10-18,
+dng308b3,Venom Jungle,Vine Tunnel floor 3,VERIFIED,in-game check 2026-10-18,
+dng309b1,Venom Jungle,Vein floor 1,VERIFIED,in-game check 2026-10-18; entrance from Gekogeko Land,
+dng309b2,Venom Jungle,Vein floor 2,VERIFIED,in-game check 2026-10-18,
+dng309b3,Venom Jungle,Vein floor 3,VERIFIED,in-game check 2026-10-18,
+dng309b4,Venom Jungle,Vein floor 4,VERIFIED,in-game check 2026-10-18,
+dng310f1,Venom Jungle,Dread Bridge 1,VERIFIED,in-game check 2026-10-18; entrance from the Dread Note locked door,Dread Note floor 1
+dng310f2,Venom Jungle,Dread Bridge 2,VERIFIED,in-game check 2026-10-18,Dread Note floor 2
+dng310f3,Venom Jungle,Dread Bridge 3,VERIFIED,in-game check 2026-10-18,Dread Note floor 3
+stagBS03,Bosses,Hades Obelisk,VERIFIED,in-game check 2026-10-18; boss room at the end of Dread Bridge,Boss stage 3 (end of Dread Note)
+stag0401,Machine Pit,Battle Area,VERIFIED,in-game check 2026-10-18,Machine Pit
+stag0404,Machine Pit,Core Area,VERIFIED,in-game check 2026-10-18,Mechanical Core / Black Core
+dng411b1,Machine Pit,Mecha Nest floor 1,VERIFIED,in-game check 2026-10-18; entrance from Battle Area,Electric Mine floor 1
+dng411b2,Machine Pit,Mecha Nest floor 2,VERIFIED,in-game check 2026-10-18,Electric Mine floor 2
+dng411b3,Machine Pit,Mecha Nest floor 3,VERIFIED,in-game check 2026-10-18,Electric Mine floor 3
+dng412b1,Machine Pit,Electric Mine floor 1,VERIFIED,in-game check 2026-10-18; entrance from Battle Area,Mecha Nest floor 1
+dng412b2,Machine Pit,Electric Mine floor 2,VERIFIED,in-game check 2026-10-18,Mecha Nest floor 2
+dng412b3,Machine Pit,Electric Mine floor 3,VERIFIED,in-game check 2026-10-18,Mecha Nest floor 3
+dng412b4,Machine Pit,Electric Mine floor 4,VERIFIED,in-game check 2026-10-18,Mecha Nest floor 4
+stagBS04,Bosses,Zone X 1 (Machine Pit),VERIFIED,in-game check 2026-10-18,Boss stage 4
+stagBS05,Bosses,Zone X 2 (Machine Pit),VERIFIED,in-game check 2026-10-18,Boss stage 5
+stagBS06,Bosses,"Zone X 3 (Machine Pit, last boss)",VERIFIED,in-game check 2026-10-18,Boss stage 6 (last boss)
+stagIS20,System,Credits / ending,VERIFIED,in-game check 2026-10-18,Ending
+dngq1b1e,Side quests,Barbarian Cave,VERIFIED,in-game check 2026-10-18; timer; entered from Battle Area,Side-quest dungeon 1
+dngq2b1e,Side quests,Undead Yard,VERIFIED,"in-game check 2026-10-18; 30 min countdown + kill counter; invisible wall at the entrance, so where it leads is not confirmed",Side-quest dungeon 2
+dngq3b1e,Side quests,Forbidden Shrine 1,VERIFIED,"in-game check 2026-10-18; ""go place the figure""; invisible wall at the entrance, so where it leads is not confirmed",Side-quest dungeon 3
+dngq3b2e,Side quests,Forbidden Shrine 2,VERIFIED,in-game check 2026-10-18,
+dngq4b1e,Side quests,Captive Dungeon 1,VERIFIED,"in-game check 2026-10-18; ""find a Booster Pack""; HP cannot be recovered",Side-quest dungeon 4 (e/h/v variants = difficulty?)
+dngq4b1h,Side quests,Captive Dungeon 1 (alt 1),VERIFIED,in-game check 2026-10-18,
+dngq4b1v,Side quests,Captive Dungeon 1 (alt 2),VERIFIED,in-game check 2026-10-18,
+dngq4b2e,Side quests,Captive Dungeon 2,VERIFIED,in-game check 2026-10-18,
+dngq4b2h,Side quests,Captive Dungeon 2 (alt 1),VERIFIED,in-game check 2026-10-18,
+dngq4b2v,Side quests,Captive Dungeon 2 (alt 2),VERIFIED,in-game check 2026-10-18,
+dngq5b1e,Side quests,Trader Hall,VERIFIED,"in-game check 2026-10-18; ""Trade with other Digimon""",
+dngq5b1h,Side quests,Trader Hall (alt 1),VERIFIED,in-game check 2026-10-18,
+dngq5b1v,Side quests,Trader Hall (alt 2),VERIFIED,in-game check 2026-10-18,
+dngq6b01,Side quests,Dungeon of Doom,VERIFIED,"in-game check 2026-10-18; ""Find a treasure""",
+dngq7b1e,Side quests,Item Road 1,VERIFIED,"in-game check 2026-10-18; ""Suspicious Dungeon""; endless enemies, chest counter; entered from Battle Area",Side-quest dungeon 7
+dngq7b2e,Side quests,Item Road 2,VERIFIED,in-game check 2026-10-18,
+dngq8b1e,Side quests,Cursed Dungeon 1,VERIFIED,"in-game check 2026-10-18; ""filled with anger and hatred""; entered from Battle Area",Side-quest dungeon 8
+dngq8b2e,Side quests,Cursed Dungeon 2,VERIFIED,in-game check 2026-10-18,
+dngq8b3e,Side quests,Cursed Dungeon 3,VERIFIED,in-game check 2026-10-18,
+dngq8b3h,Side quests,Cursed Dungeon 3 (alt 1),VERIFIED,in-game check 2026-10-18; possibly a duplicate of dngq8b3e,
+dngq8b3v,Side quests,Cursed Dungeon 3 (alt 2),VERIFIED,in-game check 2026-10-18; possibly a duplicate of dngq8b3e,
+stagML02,Terminal Area,Commander Room (Home Server),VERIFIED,in-game check 2026-10-18; reached from Main Lobby: Terminal Area,World Gate
+stagML11,Terminal Area,Main Lobby: Terminal Area,VERIFIED,in-game check 2026-10-18,Terminal plaza (Ophanimon)
+stagML12,Terminal Area,Main Lobby: Central Area,VERIFIED,in-game check 2026-10-18; Save Keeper / Digilab,Save Keeper / Digilab room
+stagML13,Terminal Area,Main Lobby: Shop Area,VERIFIED,in-game check 2026-10-18,room off ML12
+stag0001,Death Valley,Tutorial stage,CERTAIN,play test 1 (first trip to Goblin Pass); its scripts lead to stag0101,
+stag0203,Dry Land,Storm Train,MEDIUM,reached from Mummy Desert; leads to stag0205,
+stagIS08,System,Boot,CERTAIN,play test 1,
+stagIS09,System,Intro movie / title,CERTAIN,play test 1,
+stagIS10,System,Title menu (Create Digimon),CERTAIN,play test 1,
+stagIS12,System,Save / memory-card screen,CERTAIN,play test 1,
