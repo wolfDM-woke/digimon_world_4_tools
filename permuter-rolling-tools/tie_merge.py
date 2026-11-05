@@ -1,12 +1,15 @@
 """Combine permuter outputs: take the hunks other near-best outputs changed vs the current base.c, try each one
 on top of base.c, then stack the ones that lower the score (greedy, re-checking each on the stacked source).
 
-  python3 tie_merge.py <permuter job dir> [--within 0.01] [--max-hunk 12] [--jobs N] [--apply]
+  python3 tie_merge.py <permuter job dir> [--within 0.01] [--max-hunk 12] [--jobs N] [--min-near N] [--min-round N]
+                       [--no-inline] [--apply]
 
 The permuter checkout is found by walking up from the job dir (or set PERMUTER=/path/to/decomp-permuter).
 Sources: every output-*/source.c under the job dir (and roll/r*/ from roll_best.sh) scoring within
 --within (fraction) of the best. Hunks longer than --max-hunk lines are skipped (structural rewrites, e.g.
-switch -> if (1)). --no-inline skips sources with a perm_inline "inline_fn" helper.
+switch -> if (1)). --no-inline skips sources with a perm_inline "inline_fn" helper, unless base.c already uses
+inline_fn (then every output has it). --min-near N: skip the merge unless more than N near-best sources exist.
+--min-round N: only outputs from roll/rK with K >= N (plus loose output-* dirs), e.g. rounds since the last merge.
 Writes <dir>/merge/best.c + merge.log; --apply copies best.c to base.c if it scored lower.
 """
 import difflib, glob, os, re, shutil, subprocess, sys, tempfile
@@ -44,15 +47,21 @@ def score(lines):
     return int(m.group(1)) if m else None
 
 base = open(os.path.join(D, 'base.c')).read().splitlines()
+BASE_INL = any('inline_fn' in l for l in base)   # base already uses an inline_fn: keep those outputs
+SKIP_INL = '--no-inline' in sys.argv and not BASE_INL
+MINR = int(arg('--min-round', '0'))
+def round_ok(o):
+    m = re.match(r'r(\d+)$', os.path.basename(os.path.dirname(o)))
+    return m is not None and int(m.group(1)) >= MINR
 outs = []
-for o in glob.glob(os.path.join(D, 'output-*')) + glob.glob(os.path.join(D, 'roll', 'r*', 'output-*')):
+for o in glob.glob(os.path.join(D, 'output-*')) + [o for o in glob.glob(os.path.join(D, 'roll', 'r*', 'output-*')) if round_ok(o)]:
     m = re.search(r'output-(\d+)-\d+$', o)
     src = open(os.path.join(o, 'source.c')).read()
-    if '--no-inline' not in sys.argv or 'inline_fn' not in src: outs.append((int(m.group(1)), o, src.splitlines()))
+    if not SKIP_INL or 'inline_fn' not in src: outs.append((int(m.group(1)), o, src.splitlines()))
 outs.sort(key=lambda x: x[0])
 b0 = score(base)
 say('== %s: base.c scores %s; %d outputs' % (FN, b0, len(outs)))
-if b0 is None: sys.exit('base.c does not compile')
+if b0 is None: shutil.rmtree(TMP, ignore_errors=True); sys.exit('base.c does not compile')
 near = [x for x in outs if x[0] <= b0 * (1 + WITHIN)]
 
 # hunks vs base: (i1, i2, replacement lines); dedupe identical ones
@@ -63,6 +72,10 @@ for sc, o, src in near:
         key = (i1, i2, tuple(src[j1:j2]))
         if key not in seen: seen.add(key); hunks.append(key)
 say('%d near-best sources (within %.1f%%), %d distinct hunks of <= %d lines' % (len(near), WITHIN * 100, len(hunks), MAXH))
+MINN = int(arg('--min-near', '0'))
+if len(near) <= MINN:
+    say('skipped: only %d near-best sources (needs more than %d)' % (len(near), MINN))
+    shutil.rmtree(TMP, ignore_errors=True); sys.exit(0)
 
 def apply(lines, hs):
     out, pos = [], 0

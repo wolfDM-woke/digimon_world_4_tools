@@ -23,6 +23,21 @@ bash roll_best.sh nonmatchings/my_func 90 40
 - The permuter checkout is found by walking up from the job dir (or `PERMUTER=/path/to/decomp-permuter`);
   uses its `.venv/bin/python` if there is one.
 
+### Guards against dropped code (on by default)
+
+The permuter can lower the score by *deleting* code (a return hoisted above calls, stores chained away).
+A new best or merge is only accepted if it is no worse than the current base on: call list vs target.o,
+non-stack store count, and an optional `STORE_PATTERN` store class (e.g. `STORE_PATTERN='-32768\('` for GameCube
+GX FIFO writes). It also refuses to roll if target.o doesn't contain the function (exit 3), and every
+`CHECK_EVERY` rounds (default 10) checks the best against the start; if it drifted (guard worse or under
+`CHECK_MIN_INSTRS_PCT`=90% of the instructions) base.c goes back to the last checkpoint and the roll stops.
+Uses `fn_stats.py` (objdump picked from the ELF machine like the permuter does; `OBJDUMP=...` to override,
+`GUARD=0` to turn it all off).
+
+Other env: `MERGE_WITHIN` (0.02), `MERGE_MIN_NEAR`, `MERGE_LAST=1` (merge only rounds since the last merge).
+A last merge runs before stopping on a stall. `bash roll_ctl.sh pause|resume|stop|status` controls running
+rolls at the next round boundary. The permuter runs in its own process group so no workers are orphaned.
+
 ## tie_merge.py - stack changes from near-best outputs
 
 Tied and near-tied outputs are usually wrong in *different* places. This takes every small hunk (<= 12 lines)
@@ -30,7 +45,7 @@ that an output within 1% of base.c changed, scores each one alone on top of base
 help (greedy, re-scoring each time). roll_best.sh calls it every `merge_every` rounds; it also runs alone:
 
 ```
-python3 tie_merge.py <permuter job dir> [--within 0.01] [--max-hunk 12] [--jobs N] [--apply] [--no-inline]
+python3 tie_merge.py <permuter job dir> [--within 0.01] [--max-hunk 12] [--jobs N] [--min-near N] [--min-round N] [--apply] [--no-inline]
 ```
 
 Writes `<dir>/merge/best.c` and `merge.log`; `--apply` copies best.c to base.c (old one saved as
