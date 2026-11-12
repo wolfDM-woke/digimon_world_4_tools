@@ -2,6 +2,7 @@
 useful tools for logging data
 fully finished tools:
 1.warp menu tp
+2.deglaze (`deglaze/`): finds "matched" decomp functions that are really copied asm
 
 # Digimon World 4 warp menu (Gecko code)
 
